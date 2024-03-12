@@ -15,6 +15,9 @@ cd dashboard
 streamlit run app.py
 ```
 
+# Ini adalah streamlit yang sudah di deploy
+https://seva17.streamlit.app/
+
 
 
 
