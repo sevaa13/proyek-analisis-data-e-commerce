@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
 # Load data
 data_order_reviews = pd.read_csv("data_order_reviews_bersih.csv")
@@ -29,7 +30,9 @@ plt.title('Produk Terlaris')
 plt.xlabel('Jumlah Pembelian')
 plt.ylabel('Nama Produk')
 plt.tight_layout()
-st.pyplot(plt)
+plt_image_path = "produk_terlaris.png"
+plt.savefig(plt_image_path)
+st.image(plt_image_path, use_column_width=True)
 
 # Visualisasi Produk Paling tidak Laris
 st.write("## Produk Paling tidak Laris")
@@ -49,7 +52,9 @@ plt.title('Produk Paling tidak Laris')
 plt.xlabel('Jumlah Pembelian')
 plt.ylabel('Nama Produk')
 plt.tight_layout()
-st.pyplot(plt)
+plt_image_path = "produk_tidak_laris.png"
+plt.savefig(plt_image_path)
+st.image(plt_image_path, use_column_width=True)
 
 # Visualisasi Histogram Skor Ulasan
 st.write("## Histogram Skor Ulasan")
@@ -61,7 +66,10 @@ plt.ylabel('Jumlah Ulasan', fontsize=12)
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.gca().spines['top'].set_visible(False)
 plt.gca().spines['right'].set_visible(False)
-st.pyplot(plt)
+plt.tight_layout()
+plt_image_path = "histogram_skor_ulasan.png"
+plt.savefig(plt_image_path)
+st.image(plt_image_path, use_column_width=True)
 
 # Visualisasi Jumlah Pembeli per Kota
 st.write("## Jumlah Pembeli per Kota")
@@ -78,7 +86,9 @@ plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.gca().spines['top'].set_visible(False)
 plt.gca().spines['right'].set_visible(False)
 plt.tight_layout()
-st.pyplot(plt)
+plt_image_path = "jumlah_pembeli_per_kota.png"
+plt.savefig(plt_image_path)
+st.image(plt_image_path, use_column_width=True)
 
 # Visualisasi Top 10 Kota dengan Jumlah Pembeli Tertinggi
 st.write("## Top 10 Kota dengan Jumlah Pembeli Tertinggi")
@@ -96,7 +106,9 @@ plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.gca().spines['top'].set_visible(False)
 plt.gca().spines['right'].set_visible(False)
 plt.tight_layout()
-st.pyplot(plt)
+plt_image_path = "top_10_kota_pembeli_tertinggi.png"
+plt.savefig(plt_image_path)
+st.image(plt_image_path, use_column_width=True)
 
 # Visualisasi Proporsi Jumlah Pembeli per Kota (Top 10)
 st.write("## Proporsi Jumlah Pembeli per Kota (Top 10)")
@@ -108,7 +120,10 @@ plt.figure(figsize=(8, 8))
 plt.pie(top_10_states, labels=top_10_states.index, autopct='%1.1f%%', colors=plt.cm.tab20.colors)
 plt.title('Proporsi Jumlah Pembeli per Kota (Top 10)', fontsize=16, fontweight='bold')
 plt.axis('equal')
-st.pyplot(plt)
+plt.tight_layout()
+plt_image_path = "proporsi_jumlah_pembeli_per_kota.png"
+plt.savefig(plt_image_path)
+st.image(plt_image_path, use_column_width=True)
 
 with st.sidebar:
     # Menambahkan logo perusahaan
