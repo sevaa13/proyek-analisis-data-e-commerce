@@ -125,9 +125,6 @@ plt_image_path = "proporsi_jumlah_pembeli_per_kota.png"
 plt.savefig(plt_image_path)
 st.image(plt_image_path, use_column_width=True)
 
-with st.sidebar:
-    # Menambahkan logo perusahaan
-    st.image("logo_ecommerce.jpg")
 
 # Kesimpulan
 st.write("## Kesimpulan")
