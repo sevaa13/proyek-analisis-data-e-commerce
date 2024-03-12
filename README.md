@@ -11,6 +11,7 @@ pip install numpy pandas scipy matplotlib jupyter streamlit
 
 ## Run steamlit app
 ```
+cd dashboard
 streamlit run app.py
 ```
 
